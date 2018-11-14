@@ -17,7 +17,7 @@ class Wizard {
     <p>House: ${this.house}</p>
     <p>Patronus: ${this.patronus}</p>
     <p>Wand: ${this.wand}</p>
-    <ul>Spells: </ul>
+    <ul>Favorite Spell: </ul>
     `
   }
 }

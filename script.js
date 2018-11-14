@@ -38,6 +38,7 @@ function createWizard(wizard) {
 
     newCard.className = "wizards"
     newCard.id = `${wizard.id}`
+
     wizardsDiv.appendChild(newCard)
   newCard.innerHTML = newWizard.render()
 
@@ -47,6 +48,7 @@ function createWizard(wizard) {
   })
   newCard.appendChild(deleteWizardButton())
   newCard.appendChild(editWizardButton())
+  newCard.appendChild(editForm())
 }
 
 //shows form
@@ -147,12 +149,21 @@ function editWizardButton() {
   let editButton = document.createElement('button')
   editButton.className = "edit-button"
   editButton.innerText = "Edit"
-  editButton.addEventListener('click', editForm)
+  // editButton.addEventListener('click', edit)
   return editButton
 }
 
 
-function editWizard(event) {
+//PATCH call for edit
+function editFetchCall(event) {
+
+  let name = document.querySelector('input#edit-name').value
+  let image = document.querySelector('input.#edit-URL').value
+  let pet = document.querySelector('input.#edit-pet').value
+  let patronus = document.querySelector('input.#edit-patronus').value
+  let house = document.querySelector('input.#edit-house').value
+  let wand = document.querySelector('input.#edit-wand').value
+
   // let wizardCardId = event.currentTarget.parentNode.id
   // fetch(wizardUrl() + `/${wizardCardId}`, {
   //   method: "PATCH",
@@ -166,41 +177,114 @@ function editWizard(event) {
 }
 
 function editForm() {
+
   let createEditForm = document.createElement('form')
-  createEditForm.id = "edit"
+    createEditForm.id = "edit"
+    createEditForm.className = "form-inline"
 
   let editDiv = document.createElement('div')
-  editDiv.className = "col"
+    editDiv.className = "form-group"
+    editDiv.id = "edit-group"
 
-  let editInput = document.createElement('input')
-  editInput.className = "form-control"
-  editInput.placeholder = "Wizard Name"
+  createEditForm.appendChild(editDiv)
+    editDiv.appendChild(editNameInput())
+    editDiv.appendChild(editURLInput())
+    editDiv.appendChild(editPetInput())
+    editDiv.appendChild(editPatronusInput())
+    editDiv.appendChild(editHouseInput())
+    editDiv.appendChild(editWandInput())
+    editDiv.appendChild(editDoneBtn())
+
+  return createEditForm
 }
 
-//hide & seek EDIT
-const editBtn = document.querySelector('.edit-button')
-const showEditForm = document.querySelector('#edit')
 
-function edit() {
-  if(showEditForm.style.display ==="none") {
-    showEditForm.style.display ='block'
-  }else {
+//edit Submit Button
+function editDoneBtn() {
+  let editDoneBtn = document.createElement('button')
+    editDoneBtn.innerText = "Done"
+    editDoneBtn.addEventListener('submit', editFetchCall)
+    return editDoneBtn
+  }
+
+
+//edit Wand
+function editWandInput() {
+  let editWandInput = document.createElement('input')
+    editWandInput.className = "form-control"
+    editWandInput.placeholder = "Edit Wand..."
+    editWandInput.id = "edit-wand"
+    return editWandInput
+}
+
+
+//edit House
+function editHouseInput() {
+let editHouseInput = document.createElement('input')
+  editHouseInput.className = "form-control"
+  editHouseInput.placeholder = "Edit House..."
+  editHouseInput.id = "edit-house"
+  return editHouseInput
+}
+
+
+//edit Patronus
+function editPatronusInput() {
+  let editPatronusInput = document.createElement('input')
+    editPatronusInput.className = "form-control"
+    editPatronusInput.placeholder = "Edit Patronus..."
+    editPatronusInput.id = "edit-patronus"
+    return editPatronusInput
+}
+
+//edit Pet
+function editPetInput() {
+  let editPetInput = document.createElement('input')
+    editPetInput.className = "form-control"
+    editPetInput.placeholder = "Edit Pet..."
+    editPetInput.id = "edit-pet"
+    return editPetInput
+}
+
+//edit Image URL
+function editURLInput() {
+  let editURLInput = document.createElement('input')
+    editURLInput.className = "form-control"
+    editURLInput.placeholder = "Edit Image..."
+    editURLInput.id = "edit-URL"
+    return editURLInput
+}
+
+//edit Name
+function editNameInput() {
+  let editNameInput = document.createElement('input')
+    editNameInput.className = "form-control"
+    editNameInput.placeholder = "Edit Name..."
+    editNameInput.id = "edit-name"
+    return editNameInput
+}
+
+// hide & seek EDIT
+let editBtn = document.querySelector('.edit-button')
+let showEditForm = document.querySelector('#edit')
+let editWizard = false
+
+editBtn.addEventListener('click', () => {
+  editWizard = !editWizard
+  if (editWizard) {
+    showEditForm.style.display = 'block'
+  }
+  else {
     showEditForm.style.display = 'none'
   }
-}
-
-
-
-// <form>
-//   <div class="row">
-//     <div class="col">
-//       <input type="text" class="form-control" placeholder="First name">
-//     </div>
-//     <div class="col">
-//       <input type="text" class="form-control" placeholder="Last name">
-//     </div>
-//   </div>
-// </form>
+})
+// function edit() {
+//   if(showEditForm.style.display === "none") {
+//     showEditForm.style.display ='block'
+//   }else {
+//     showEditForm.style.display = 'none'
+//   }
+// }
 
 
 //
