@@ -25,15 +25,13 @@ class Wizard {
         <p id=pet-${this.id}>Pet: ${this.pet}</p>
         <p id=patronus-${this.id}>Patronus: ${this.patronus}</p>
         <p id=wand-${this.id}>Wand: ${this.wand}</p>
-        <ul>Favorite Spell: </ul>
-        <br>
+        <p id=spells-${this.id}>Favorite Spell: <ul>
         <button class="delete" id=delete-${this.id}>Delete</button>
         <button class="edit" id=edit-${this.id}>Edit</button>
       </div>
     </div>
   </div>
   </div>
-  <br>
     `
   }
 }

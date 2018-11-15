@@ -46,7 +46,7 @@ function createWizard(wizard) {
 
   wizard.spells.forEach(spell => {
     let spellInstance = new Spell(spell.name, spell.effect)
-    newCard.querySelector('ul').appendChild(spellInstance.render())
+    newCard.querySelector(`#spells-${wizard.id}`).appendChild(spellInstance.render())
   })
 
   // let flipCardBack = document.querySelector('.flip-card-back')

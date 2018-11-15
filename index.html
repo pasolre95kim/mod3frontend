@@ -9,18 +9,22 @@
 
 h1 {
   text-align: center;
+  color: white;
+  font-family: cursive;
+  font-size: 70px;
 }
 .grid-container {
   display: grid;
   justify-content: center;
-  grid-template-columns: 10% 10% 10%;/*Make the grid smaller than the container*/
-  grid-gap: 2%;
+  grid-template-columns: 5%
+
   background-color:;
   padding: 2%;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:  cursive;
+  background-image: url("https://img.wallpapersafari.com/desktop/1920/1080/18/87/7t0Azu.jpg")
 }
 
 
@@ -93,15 +97,21 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #45a049;
 }
-
+form.form-inline{
+  border-radius: 2%;
+  /* background-color: #f2f2f2; */
+  padding: 1%;
+}
 .form-inline{
     border-radius: 2%;
-    background-color: #f2f2f2;
+    /* background-color: #f2f2f2; */
     padding: 1%;
 }
 form {
 margin: 0 auto;
-width: 70%;
+width: 50%;
+color: transparent;
+
 }
 
 
@@ -125,12 +135,22 @@ button#createWizard {
     transform: translateX(-50%);
 }
 
+button.btn btn-primary{
+  position:relative/absolute;
+  left:50%;
+  transform: translateX(-50%);
+}
+
+button#createWizard:hover {
+  background: #b30000
+}
 
 button {
+   border-radius: 5px;
     position: relative;
     background-color: #ff8080;
     border: none;
-    font-size: 15;
+    font-size: 13;
     color: #FFFFFF;
     padding: 1%;
     width: 30%;
@@ -168,6 +188,30 @@ button:hover {
   background: #b30000
 }
 
+
+
+input.form-group {
+    width: 30%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input:hover {
+    background-color: #ffffb3;
+}
+
+ul {
+  font-size: 12px;
+}
+
+p {
+  font-size: 15px;
+}
 
 </style>
 

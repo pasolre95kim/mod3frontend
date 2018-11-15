@@ -4,9 +4,9 @@ class Spell {
     this.effect = effect
   }
   render() {
-    let li = document.createElement('li')
-    li.innerHTML = this.name
-    return li
+    let pTag = document.createElement('li')
+    pTag.innerHTML = this.name
+    return pTag
   }
 
 }
