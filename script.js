@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function() {
   signin()
   getWizards()
   wizardForm()
-  document.querySelector("#wizard-container").innerHTML=" "
 })
 
 
@@ -69,8 +68,8 @@ function wizardForm() {
 
 //form to add a new wizard
 function addWizards(event) {
+  document.querySelector("#wizard-container").innerHTML=" "
   event.preventDefault()
-
   let name = document.querySelectorAll('input.form-control')[0].value
   let image = document.querySelectorAll('input.form-control')[1].value
   let pet = document.querySelectorAll('input.form-control')[2].value
@@ -135,6 +134,7 @@ function addWizardSpell(wizardId, selectedSpellIds, spellCounter) {
 
 
 function removeWizard(event) {
+
   let wizardCardId = parseInt(event.currentTarget.id.split("-")[1])
   fetch(wizardUrl() + `/${wizardCardId}`, {
     method: "DELETE",
@@ -144,6 +144,7 @@ function removeWizard(event) {
   })
   .then(resp => resp.json())
   .then(data => console.log(data))
+  document.getElementById(`${wizardCardId}`).remove()
 }
 
 
@@ -187,13 +188,14 @@ debugger
   })
   .then(resp => resp.json())
   .then(data => {
-    name
+    getWizards(data)
+
   })
 }
 
-function loadThatWizard(data) {
-  render(data)
-}
+// function loadThatWizard(data) {
+//   render(data)
+// }
 
 //Edit form set up
 function editForm(wizardId) {
@@ -202,7 +204,7 @@ function editForm(wizardId) {
     createEditForm.className = "form-inline"
 
   let editDiv = document.createElement('div')
-    editDiv.className = "form-group"
+    editDiv.className = "edit-group"
     editDiv.id = `editform-${wizardId}`
     editDiv.style.display = "none"
 
@@ -290,10 +292,6 @@ function editNameInput(wizardId) {
     editNameInput.id = `edit-name-${wizardId}`
     return editNameInput
 }
-
-
-
-
 
 
 

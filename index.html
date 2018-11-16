@@ -13,26 +13,34 @@ h1 {
   font-family: cursive;
   font-size: 70px;
 }
-.grid-container {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 5%
 
-  background-color:;
-  padding: 2%;
+
+
+
+div#wizard-container {
+  padding-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 25px;
+  /* display: grid; */
+  justify-content: center;
 }
+
+
 
 body {
   font-family:  cursive;
   background-image: url("https://img.wallpapersafari.com/desktop/1920/1080/18/87/7t0Azu.jpg")
+
 }
 
 
 .flip-card {
   background-color: transparent;
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
   perspective: 1000px;
+  border: 3%
 }
 
 .flip-card-inner {
@@ -72,6 +80,7 @@ body {
 img {
   object-fit: cover
 }
+
 input[type=text], select {
 
     width: 100%;
@@ -97,32 +106,42 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #45a049;
 }
-form.form-inline{
-  border-radius: 2%;
-  /* background-color: #f2f2f2; */
-  padding: 1%;
-}
+
 .form-inline{
     border-radius: 2%;
-    /* background-color: #f2f2f2; */
-    padding: 1%;
+    background-color: transparent;
+    width: 40%;
+    margin: 0 auto;
+    /* padding: 1%; */
 }
-form {
+
+.form-group{
+  border-radius: 3%;
+  background-color: transparent;
+  width: 100%;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 35%;
+  margin: 0 auto;
+}
+
+/* form {
 margin: 0 auto;
-width: 50%;
+width: 35%;
 color: transparent;
 
-}
+} */
 
 
 button#createWizard {
     /* position: relative; */
     background-color: #ff8080;
     border: none;
-    font-size: 15;
+    font-size: 15px;
     color: #FFFFFF;
     padding: 1%;
-    width: 30%;
+    width: 20%;
     text-align: center;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
@@ -139,10 +158,23 @@ button.btn btn-primary{
   position:relative/absolute;
   left:50%;
   transform: translateX(-50%);
+
 }
 
 button#createWizard:hover {
-  background: #b30000
+  background: #b30000;
+  font-family: cursive;
+}
+
+button#createWizard {
+  font-family: cursive;
+  width: 13%;
+}
+button#add-button {
+  font-family: cursive;
+  font-size: 13px;
+  margin: 0 auto;
+  width: 14%;
 }
 
 button {
@@ -185,29 +217,28 @@ button:active:after {
 }
 
 button:hover {
-  background: #b30000
+  background: #cce0ff
 }
 
+label {
+  color: white;
+}
 
-
-input.form-group {
-    width: 30%;
-    background-color: #4CAF50;
+div.form-inline {
+    width: 40%;
+    background-color: transparent;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 4px;
+    border-radius: 4%;
     cursor: pointer;
 }
 
 input:hover {
-    background-color: #ffffb3;
+    background-color: #cce0ff;
 }
 
-ul {
-  font-size: 12px;
-}
 
 p {
   font-size: 15px;
@@ -267,7 +298,7 @@ p {
       </select>
     </div>
 
-        <button type="submit" class="btn btn-primary">Add Wizard</button>
+        <button type="submit" id ="add-button" class="btn btn-primary">Add Wizard</button>
         <br>
     </form>
     <br>

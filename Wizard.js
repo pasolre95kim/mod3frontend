@@ -14,6 +14,7 @@ class Wizard {
     <div class="grid-container">
     <div class="flip-card">
     <div class="flip-card-inner">
+
       <div class="flip-card-front">
       <img id=image-${this.id} src=${this.image} style="width:100%;height:100%;"/>
       </div>
@@ -29,7 +30,8 @@ class Wizard {
         <button class="delete" id=delete-${this.id}>Delete</button>
         <button class="edit" id=edit-${this.id}>Edit</button>
       </div>
-    </div>
+      </div>
+    
   </div>
   </div>
     `
