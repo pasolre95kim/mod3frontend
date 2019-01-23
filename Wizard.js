@@ -20,7 +20,6 @@ class Wizard {
       </div>
 
       <div class="flip-card-back">
-
         <h3 id=name-${this.id}>Name: ${this.name}</h3>
         <p id=house-${this.id}>House: ${this.house}</p>
         <p id=pet-${this.id}>Pet: ${this.pet}</p>
@@ -31,7 +30,6 @@ class Wizard {
         <button class="edit" id=edit-${this.id}>Edit</button>
       </div>
       </div>
-    
   </div>
   </div>
     `

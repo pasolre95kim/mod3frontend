@@ -193,9 +193,7 @@ debugger
   })
 }
 
-// function loadThatWizard(data) {
-//   render(data)
-// }
+
 
 //Edit form set up
 function editForm(wizardId) {
@@ -292,22 +290,3 @@ function editNameInput(wizardId) {
     editNameInput.id = `edit-name-${wizardId}`
     return editNameInput
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
